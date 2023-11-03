@@ -1,28 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const Header = (props) => {
+  return(
+    <div>
+      <h1>{props.course}</h1>
+    </div>
+  )
+}
 
-const Hello = (props) => {
-  console.log(props)
-  return (
+const Content = (props) => {
+  return(
     <div>
       <p>
-        Hello {props.name}, you are {props.age} years old
+        {props.part} {props.exercises}
       </p>
     </div>
   )
 }
 
+const Total = (props) => {
+  return(
+    <div>
+      <p>Number of exercises {props.exercises}</p>
+    </div>
+  )
+}
+
 const App = () => {
-  const name = 'Peter'
-  const age = 10
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello name='Maya' age={26 + 10} />
-      <Hello name={name} age={age} />
+      <Header course={course} />
+      <Content part={part1} exercises={exercises1} />
+      <Content part={part2} exercises={exercises2} />
+      <Content part={part3} exercises={exercises3} />
+      <Total exercises={exercises1 + exercises2 + exercises3}/>
     </div>
   )
 }
