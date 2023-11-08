@@ -1,3 +1,7 @@
+import { useState } from "react"
+import Display from "./Display"
+import Button from "./Button"
+
 const Header = (props) => {
   return(
     <div>
@@ -31,6 +35,8 @@ const Total = (props) => {
 }
 
 const App = () => {
+  const [ counter, setCouter ] = useState(0)
+
   const course = {
     name: 'Half Stack application development',
     parts: [
@@ -49,8 +55,21 @@ const App = () => {
     ]
   }
 
+  // setTimeout(
+  //   () => setCouter(counter + 1), 1000
+  // )
+  const increaseByOne = () => {
+    setCouter(counter + 1)
+  }
+  const setToZero = () => {
+    setCouter(0)
+  }
+
   return (
     <div>
+      <Display counter={counter}/>
+      <Button onClick={increaseByOne} text={'Increase'}/>
+      <Button onClick={setToZero} text={'Zero'}/>
       <Header course={course.name} />
       <Content parts={course.parts} />
       <Total parts={course.parts}/>
