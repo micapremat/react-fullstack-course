@@ -2,6 +2,7 @@ import { useState } from "react"
 import Display from "./Display"
 import Button from "./Button"
 import History from "./History"
+import Statistics from "./Statistics"
 
 const Header = (props) => {
   return(
@@ -87,7 +88,8 @@ const App = () => {
 
   return (
     <div>
-      {left}
+      <Statistics />
+      {/* {left}
       <Button onClick={handleLeftClick} text={'Left'}/>
       <Button onClick={handleRightClick} text={'Right'}/>
       {right}
@@ -97,7 +99,7 @@ const App = () => {
       <Button onClick={setToZero} text={'Zero'}/>
       <Header course={course.name} />
       <Content parts={course.parts} />
-      <Total parts={course.parts}/>
+      <Total parts={course.parts}/> */}
     </div>
   )
 }
