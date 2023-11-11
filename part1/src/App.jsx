@@ -36,6 +36,7 @@ const Total = (props) => {
 }
 
 const App = () => {
+  //useState function must not be called from inside of a loop, a conditional expression or any place that is not a function defining a component.
   const [ counter, setCouter ] = useState(0)
   const [ left, setLeft ] = useState(0)
   const [ right, setRight ] = useState(0)
