@@ -1,11 +1,4 @@
 
-const Display = (props) => {
-
-  return (
-    <div>
-      <div>{props.counter}</div>
-    </div>
-  )
-}
+const Display = ({ counter }) => <div>{counter}</div>
 
 export default Display
