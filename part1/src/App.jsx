@@ -3,6 +3,7 @@ import Display from "./Display"
 import Button from "./Button"
 import History from "./History"
 import Statistics from "./Statistics"
+import Anecdotes from "./Anecdotes"
 
 const Header = (props) => {
   return(
@@ -88,8 +89,9 @@ const App = () => {
 
   return (
     <div>
-      <Statistics />
-      {/* {left}
+      <Anecdotes />
+      {/*<Statistics />
+      { {left}
       <Button onClick={handleLeftClick} text={'Left'}/>
       <Button onClick={handleRightClick} text={'Right'}/>
       {right}

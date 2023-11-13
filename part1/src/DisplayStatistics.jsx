@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "./Button"
+import SatisticLine from "./StatisticLine"
 
 const DisplayStatistics = ({total,good,bad, neutral}) => {
 
@@ -21,9 +22,19 @@ const DisplayStatistics = ({total,good,bad, neutral}) => {
         return (
             <div>
                 <h2>Statistics</h2>
-                <p>Good: {good}</p>
-                <p>Neutral: {neutral}</p>
-                <p>Bad: {bad}</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th><SatisticLine text={'Good:'} value={good}/></th>
+                    </tr>
+                    <tr>
+                        <th><SatisticLine text={'Neutral:'} value={neutral}/></th>
+                    </tr>
+                    <tr>
+                        <th><SatisticLine text={'Bad:'} value={bad}/></th>
+                    </tr>
+                    </thead>
+                </table>
                 <p>All: {total}</p>
                 <p>Average: {calculateAverage()}</p>
                 <p>Positive: {percentagePositive()}%</p>
