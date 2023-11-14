@@ -13,18 +13,28 @@ const Anecdotes = () => {
         'The only way to go fast, is to go well.'
     ]
     const [selected, setSelected] = useState(0)
+    const points = { 0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0}
+    const [votes, setVotes] = useState({...points})
 
     const generateRandom = () => {
         const max = anecdotes.length
         const rand = Math.floor(Math.random() * max)
         setSelected(rand)
     }
-
+    const voteAnecdote = () => {
+        const aux = votes
+        aux[selected] +=1
+        setVotes({...aux})
+    }
     return (
         <div>
             <p>
                 {anecdotes[selected]}
             </p>
+            <p>
+                {votes[selected]}
+            </p>
+            <Button text={'Vote'} onClick={voteAnecdote}/>
             <Button text={'Nextanecdote'} onClick={generateRandom}/>
         </div>
 )
