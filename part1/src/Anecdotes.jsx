@@ -26,8 +26,13 @@ const Anecdotes = () => {
         aux[selected] +=1
         setVotes({...aux})
     }
+    const mostVotesAnecdote = () => {
+        const elem = Object.keys(votes).reduce(function(a, b){ return votes[a] > votes[b] ? a : b })
+        return anecdotes[elem]
+    }
     return (
         <div>
+            <h2>Anecdote of the day</h2>
             <p>
                 {anecdotes[selected]}
             </p>
@@ -35,7 +40,9 @@ const Anecdotes = () => {
                 {votes[selected]}
             </p>
             <Button text={'Vote'} onClick={voteAnecdote}/>
-            <Button text={'Nextanecdote'} onClick={generateRandom}/>
+            <Button text={'Next anecdote'} onClick={generateRandom}/>
+            <h2>Anecdote with most votes</h2>
+            <p>{mostVotesAnecdote()}</p>
         </div>
 )
 }
