@@ -45,8 +45,8 @@ const App = () => {
 
   return (
     // <Course courses={courses} />
-    // <Notes />
-    <Phonebook />
+    <Notes />
+    // <Phonebook />
   )
 }
 
